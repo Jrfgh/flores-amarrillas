@@ -1,31 +1,134 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flores Amarillas para Mi Princesa</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Escuela de Formación Deportiva José Ternera</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <!-- Carta -->
-    <div class="carta">
-      <h2>💛 Para mi Princesa 💛</h2>
-      <p>
-        Hoy te celebro con flores amarillas,  
-        porque eres la luz que alegra mis días.  
-        Cada pétalo es un “te amo”,  
-        cada tallo, una promesa.  
-        Gracias por ser mi niña hermosa.  
-      </p>
-      <p style="text-align:right;">Con amor,<br>Tu príncipe 🌻</p>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <!-- Reemplaza assets/logo.svg por tu imagen si la subes -->
+        <img src="assets/logo.svg" alt="Logo JT" class="logoimg">
+        <div>
+          <div class="title">Escuela José Ternera</div>
+          <div class="subtitle">Formación en fútbol base</div>
+        </div>
+      </div>
+      <nav class="mainnav">
+        <a href="#inicio">Inicio</a>
+        <a href="#futbol">Fútbol</a>
+        <a href="#entrenadores">Entrenadores</a>
+        <a href="#contacto">Contacto</a>
+        <button class="cta" id="openLogin">Iniciar sesión</button>
+      </nav>
     </div>
+  </header>
 
-    <!-- Campo de girasoles -->
-    <div class="campo" id="campo"></div>
-  </div>
+  <main class="container">
+    <section id="inicio" class="hero">
+      <div class="left">
+        <h1>Escuela de Formación Deportiva José Ternera</h1>
+        <p class="lema">“Donde el juego es pasión, la formación es compromiso y el equipo es familia”</p>
+        <p>Bienvenidos a la escuela de fútbol donde formamos niños y jóvenes con disciplina, técnica y valores. Contamos con entrenadores capacitados y un programa para las categorías Tetero, Infantil y Prejuvenil.</p>
+      </div>
+      <div class="right">
+        <div class="card">
+          <strong>Contacto rápido</strong>
+          <p style="margin:6px 0">Inscripciones / Información</p>
+          <p style="margin:6px 0"><strong>Escuela:</strong> 3194761379</p>
+          <p style="margin:6px 0"><strong>Jairo (admin):</strong> 3135627415</p>
+          <p style="font-size:12px;color:#666;margin-top:8px">Síguenos en nuestras redes para noticias y convocatorias.</p>
+        </div>
+      </div>
+    </section>
 
-  <script src="script.js"></script>
+    <section id="futbol">
+      <h2>Fútbol</h2>
+      <p>Programa de formación en fútbol base. Trabajamos técnica individual, táctica, físico y formación de valores.</p>
+      <div class="grid">
+        <div class="cat">
+          <h3>Tetero (5 a 8 años)</h3>
+          <p>Entrenamientos lúdicos, énfasis en coordinación y diversión.</p>
+          <p><strong>Horario:</strong> Lunes, Miércoles y Viernes - 5:00 a 6:30 am</p>
+        </div>
+        <div class="cat">
+          <h3>Infantil (9 a 11 años)</h3>
+          <p>Trabajo en técnica individual, fundamentos tácticos y cooperación.</p>
+          <p><strong>Horario:</strong> Martes y Jueves - 5:00 a 6:30 am</p>
+        </div>
+        <div class="cat">
+          <h3>Prejuvenil (12 a 15 años)</h3>
+          <p>Entrenamientos avanzados, táctica colectiva y preparación física.</p>
+          <p><strong>Horario:</strong> Lunes, Miércoles y Viernes - 6:30 a 8:00 am</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="entrenadores">
+      <h2>Entrenadores</h2>
+      <div class="grid">
+        <div class="cat"><h3>José Gregorio Ternera Herrera</h3><p>Director técnico - Experiencia en formación de base.</p></div>
+        <div class="cat"><h3>Jairo Rafael Fragoso García</h3><p>Entrenador - Coordinación y desarrollo físico.</p></div>
+        <div class="cat"><h3>Isaías Polo Marín</h3><p>Entrenador - Técnica y táctica individual.</p></div>
+        <div class="cat"><h3>Rodrigo Antonio Meza Marriaga</h3><p>Entrenador - Preparación y logística.</p></div>
+      </div>
+    </section>
+
+    <section id="loginSection">
+      <h2>Iniciar sesión</h2>
+      <div class="card">
+        <form id="loginForm" class="login-form">
+          <label for="role">Tipo de usuario</label>
+          <select id="role">
+            <option value="publico">Público</option>
+            <option value="entrenador">Entrenador</option>
+            <option value="deportista">Deportista</option>
+          </select>
+
+          <label for="username">Usuario</label>
+          <input id="username" placeholder="Nombre de usuario (ej. Juan Pérez)" />
+
+          <label for="password">Contraseña</label>
+          <input id="password" type="password" placeholder="Contraseña" />
+
+          <div class="actions">
+            <button type="button" id="btnLogin" class="btn btn--primary">Entrar</button>
+            <button type="button" id="btnCancel" class="btn btn--ghost">Cancelar</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="dashboard" class="hidden">
+        <div class="toolbar">
+          <h3 id="dashTitle">Panel</h3>
+          <button id="logout" class="btn">Cerrar sesión</button>
+        </div>
+        <div id="dashContent"></div>
+      </div>
+    </section>
+
+    <section id="nosotros">
+      <h2>Nosotros</h2>
+      <p>La Escuela José Ternera se dedica a la formación de fútbol base, promoviendo valores, técnica y desarrollo humano. Nuestro objetivo es formar jugadores integrales y responsables con su comunidad.</p>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>Teléfonos de contacto:</p>
+      <ul>
+        <li>Escuela: 3194761379</li>
+        <li>Jairo (admin): 3135627415</li>
+      </ul>
+      <p>Dirección: Cancha Puerto Amor</p>
+    </section>
+
+    <footer>
+      <div class="container">© Escuela José Ternera — Todos los derechos reservados</div>
+    </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
-
